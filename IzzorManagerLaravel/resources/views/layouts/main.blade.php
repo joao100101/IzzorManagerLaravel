@@ -17,16 +17,20 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
+    <link rel="stylesheet" href="./css/layout.css">
 </head>
 
 <body>
     <header>
         <div class="banner-area">
-            <img src="https://izzor.com.br/wp-content/uploads/2023/01/logo-branco.webp" alt="Logo">
+            <a href="#" class="logo-link">
+                <img src="https://izzor.com.br/wp-content/uploads/2023/01/logo-branco.webp" alt="Logo"
+                    class="logo">
+            </a>
         </div>
         <nav class="navbar">
             <ul class="nav-items">
-                <li class="nav-item">
+                <li class="nav-item inicio">
                     <a href="#" class="nav-link">
                         <ion-icon name="home-outline"></ion-icon>
                         INICIO
