@@ -43,6 +43,21 @@ footer {
     color: white;
 }
 
+.login-button button{
+    background-color: #0187a7;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.login-button button a{
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-decoration: none;
+    outline: none;
+}
+
 /*MOBILE AREA*/
 
 .mobile-menu{
@@ -57,9 +72,10 @@ footer {
     margin: 8px;
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 999px) {
     body{
         overflow-x: hidden;
+        width: 100vw;
     }
     .mobile-menu{
         display: block;
@@ -67,21 +83,22 @@ footer {
     .banner-area {
         display: flex;
         justify-content: center;
-        width: 600px;
+        width: calc(var(--vw, 1vw) * 100);
     }
     .navbar{
-        width: 600px;
+        width: calc(var(--vw, 1vw) * 100);
     }
     #nav-padrao {
         position: absolute;
-        top: 7vh;
+        top: 5.8vh;
         right: 0;
         width: 50vw;
-        height: 92vh;
+        height: calc(var(--vh, 1vh) * 90);
         background-color: black;
-        transform: translateX(100%);
+        display: none;
         transition: transform 0.3s ease-in;
     }
+
 
     #nav-padrao li{
         margin-left: 0;
@@ -89,22 +106,45 @@ footer {
     }
 
     #nav-padrao.active{
-        transform: translateX(0);
+        position: absolute;
+        z-index: 100;
+        display: block;
     }
 
-    @keyframes navLinkFade{
+    .nav-item{
+        display: block;
+        padding-top: 1.2rem;
+        width: 100%;
+    }
+
+    .nav-link:hover{
+        animation: backgroundFade 3s ease forwards 0.1s
+    }
+
+    @keyframes backgroundFade {
+        from{
+            background-color: rgba(255, 255, 255, 0.219);
+        }
+        to{
+            background: none;
+        }
+    }
+    @keyframes navLinkFade {
         from{
             opacity: 0;
-            transform: translateX(50px);
+            display: none;
         }
         to{
             opacity: 1;
-            transform: translateX(0);
+            display: block;
         }
     }
     footer{
-        width: 600px;
-        top: 667px;
+        width: calc(var(--vw, 1vw) * 100);
+        text-align: center;
+        font-size: 15px;
+        height: 10vh;
+        top: calc(var(--vh, 1vh) * 100);
     }
 
 }

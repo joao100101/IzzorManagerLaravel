@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>@yield('title')</title>
 
@@ -29,33 +29,42 @@
             </a>
         </div>
 
+        <div class="navbar">
+            <nav>
+                <div class="mobile-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+                <ul class="nav-items" id="nav-padrao">
+                    <li class="nav-item inicio">
+                        <a href="#" class="nav-link">
+                            <ion-icon name="home-outline"></ion-icon>
+                            INICIO
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <ion-icon name="apps-outline"></ion-icon>
+                            CATEGORIAS
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <ion-icon name="storefront-outline"></ion-icon>
+                            PRODUTOS
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <ion-icon name="person-circle-outline"></ion-icon>
+                            LOGIN
+                        </a>
+                    </li>
+                </ul>
 
-        <nav class="navbar">
-            <div class="mobile-menu">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-            <ul class="nav-items" id="nav-padrao">
-                <li class="nav-item inicio">
-                    <a href="#" class="nav-link">
-                        <ion-icon name="home-outline"></ion-icon>
-                        INICIO
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <ion-icon name="apps-outline"></ion-icon>
-                        CATEGORIAS
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <ion-icon name="storefront-outline"></ion-icon>
-                        PRODUTOS
-                    </a>
-                </li>
-            </ul>
+
+        </div>
         </nav>
     </header>
     <main>

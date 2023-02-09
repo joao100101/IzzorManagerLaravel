@@ -10,7 +10,7 @@ class MobileNavbar{
 
     animateLinks(){
         this.navLinks.forEach((link) =>{
-            link.style.animation ? (link.style.animation = "") : (link.style.animation = `navLinksFade 0.5s ease forwards 0.3s`);
+            link.style.animation ? (link.style.animation = "") : (link.style.animation = `navLinkFade 0.5s ease forwards 0.3s`);
         });
     }
 
@@ -37,3 +37,9 @@ const mobileNavbar = new MobileNavbar(
     ".nav-items li",
 );
 mobileNavbar.init();
+
+let vw = window.innerWidth * 0.01;
+let vh = window.innerHeight * 0.01;
+
+document.documentElement.style.setProperty('--vw', `${vw}px`);
+document.documentElement.style.setProperty('--vh', `${vh}px`);

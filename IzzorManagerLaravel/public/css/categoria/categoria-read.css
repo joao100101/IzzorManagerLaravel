@@ -15,6 +15,7 @@
     position: absolute;
     margin-top: 15px;
     margin-left: 350px;
+    height: 30px;
 }
 .table-area{
     width: 100%;
@@ -42,4 +43,29 @@ td{
 th{
     background-color:#060;
     color:#FFF;
+}
+
+
+@media screen and (max-width: 800px) {
+    .btn{
+        z-index: 1;
+        margin-top: 0.4rem;
+        width: 100px;
+        height: 40px;
+        margin-left: 65vw;
+        outline: none;
+    }
+
+    #btn-text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: .3rem;
+    }
+
+    table, tr, td, th{
+        width:90vw;
+        padding:0px;
+        font-size:15px;
+    }
 }
