@@ -28,8 +28,15 @@
                     class="logo">
             </a>
         </div>
+
+
         <nav class="navbar">
-            <ul class="nav-items">
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-items" id="nav-padrao">
                 <li class="nav-item inicio">
                     <a href="#" class="nav-link">
                         <ion-icon name="home-outline"></ion-icon>
@@ -57,6 +64,7 @@
     <footer>
         <p>IZZOR - CNPJ: 38.715.008/0001-07 &copy; Todos os direitos reservados 2023.</p>
     </footer>
+    <script src="./js/mobile-navbar.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

@@ -3,6 +3,19 @@
     margin-top: 2rem;
 }
 
+#btn-criar{
+    background-color: #060;
+    border-radius: 7px;
+}
+#btn-criar:hover{
+    background-color: rgb(1, 133, 1);
+}
+
+.btn{
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 350px;
+}
 .table-area{
     width: 100%;
     display: flex;
@@ -10,6 +23,7 @@
 }
 
 table{
+    margin-top: 50px;
     border: solid black 1px;
 }
 table, tr, td, th{

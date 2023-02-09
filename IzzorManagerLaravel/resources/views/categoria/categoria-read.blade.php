@@ -6,6 +6,7 @@
 @section('content')
     <h1 class="titulo">Exibindo Categorias</h1>
     <div class="table-area">
+        <a class="btn btn-primary btn-sm" id="btn-criar" href="#" role="button">CRIAR NOVA</a>
         <table class="tabela-categorias">
             <tr>
                 <th>NOME</th>
