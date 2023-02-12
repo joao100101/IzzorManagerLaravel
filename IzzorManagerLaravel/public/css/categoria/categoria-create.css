@@ -1,0 +1,26 @@
+#category-create-container{
+    margin-top: 2rem;
+    text-align: center;
+}
+#category-create-container input{
+    margin-top: .5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group .form-label{
+    margin-right: 100%;
+    margin-bottom: 0;
+    margin-top: 1rem;
+}
+
+textarea{
+    max-height: 10rem;
+}

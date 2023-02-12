@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>@yield('title')</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
 
     <!-- Fonte do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,13 +21,14 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" type="text/css" href="/css/layout.css" />
+    @yield('head')
 </head>
 
 <body>
     <header>
         <div class="banner-area">
-            <a href="#" class="logo-link">
+            <a href="/" class="logo-link">
                 <img src="https://izzor.com.br/wp-content/uploads/2023/01/logo-branco.webp" alt="Logo"
                     class="logo">
             </a>
@@ -38,7 +43,7 @@
                 </div>
                 <ul class="nav-items" id="nav-padrao">
                     <li class="nav-item inicio">
-                        <a href="#" class="nav-link">
+                        <a href="/" class="nav-link">
                             <ion-icon name="home-outline"></ion-icon>
                             INICIO
                         </a>
@@ -62,8 +67,6 @@
                         </a>
                     </li>
                 </ul>
-
-
         </div>
         </nav>
     </header>
@@ -73,7 +76,7 @@
     <footer>
         <p>IZZOR - CNPJ: 38.715.008/0001-07 &copy; Todos os direitos reservados 2023.</p>
     </footer>
-    <script src="./js/mobile-navbar.js"></script>
+    <script src="/js/mobile-navbar.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

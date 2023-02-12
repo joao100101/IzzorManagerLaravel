@@ -9,12 +9,12 @@ class CategoriaController extends Controller
 {
     //
     public function index(){
-
-        return view('categoria/categoria-read');
+        $category = Categoria::paginate(5);
+        return view('categoria/categoria-read', ['categories' => $category]);
     }
 
     public function create(){
-        return view('categoria/categoria-editar');
+        return view('categoria/categoria-create');
     }
 
     public function edit($id){
@@ -22,4 +22,38 @@ class CategoriaController extends Controller
         $categoria = Categoria::findOrFail($id);
         return view('categoria/categoria-editar', ['categoria' => $categoria]);
     }
+
+
+
+    public function store(Request $request) {
+
+        $category = new Categoria;
+
+        $category->titulo = $request->title;
+        $category->descricao = $request->desc;
+
+        // Image Upload
+        if($request->hasFile('image') && $request->file('image')->isValid()) {
+
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestImage->move(public_path('img/categories'), $imageName);
+
+            $category->imagem = $imageName;
+
+        }else{
+            $category->imagem = '';
+        }
+
+
+        $category->save();
+
+        return redirect('/')->with('msg', 'Evento criado com sucesso!');
+
+    }
+
 }

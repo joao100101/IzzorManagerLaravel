@@ -4,11 +4,11 @@
 }
 
 #btn-criar{
-    background-color: #060;
+    background-color: #0062cc;
     border-radius: 7px;
 }
 #btn-criar:hover{
-    background-color: rgb(1, 133, 1);
+    background-color: #0b5ed7;
 }
 
 .btn{
@@ -31,7 +31,6 @@ table, tr, td, th{
     display: flex;
     justify-content: center;
     align-items: center;
-    border:#000 solid 1px;
     width:450px;
     padding:0px;
     font-size:20px;
@@ -41,7 +40,7 @@ td{
     height:30px;
 }
 th{
-    background-color:#060;
+    background-color:#0062cc;
     color:#FFF;
 }
 
