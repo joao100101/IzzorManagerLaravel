@@ -71,6 +71,12 @@
         </nav>
     </header>
     <main>
+        @if (session('msg'))
+            <p class="flash-msg">{{ session('msg') }}</p>
+        @endif
+        @if (session('msg-error'))
+        <p class="flash-msg-error">{{ session('msg-error') }}</p>
+    @endif
         @yield('content')
     </main>
     <footer>

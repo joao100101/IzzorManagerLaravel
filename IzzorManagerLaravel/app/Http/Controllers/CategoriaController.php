@@ -27,6 +27,13 @@ class CategoriaController extends Controller
 
     public function store(Request $request) {
 
+        if(strlen($request->title) > 40){
+            return redirect('/categoria/create')->with('msg-error', 'Categoria excede o limite de tamanho do titulo!');
+        }
+        if(strlen($request->desc) > 100){
+            return redirect('/categoria/create')->with('msg-error', 'Categoria excede o limite de tamanho da descrição!');
+        }
+
         $category = new Categoria;
 
         $category->titulo = $request->title;

@@ -3,6 +3,27 @@
     margin-top: 2rem;
 }
 
+.container{
+    width: calc(var(--vw, 1vw) * 100);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.table-area{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+
+.table-area #btn-criar{
+    margin-bottom: .5rem;
+    width: 10rem;
+    align-self: flex-end;
+}
+
 #btn-criar{
     background-color: #0062cc;
     border-radius: 7px;
@@ -12,55 +33,54 @@
 }
 
 .btn{
-    position: absolute;
-    margin-top: 15px;
-    margin-left: 350px;
     height: 30px;
 }
-.table-area{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
+
 
 table{
-    margin-top: 50px;
     border: solid black 1px;
 }
 table, tr, td, th{
     display: flex;
     justify-content: center;
     align-items: center;
-    width:450px;
+    width:550px;
     padding:0px;
     font-size:20px;
 }
 td{
-    width:150px;
+    width:300px;
     height:30px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.description{
+    display: flex;
+    justify-content: left;
+    text-overflow: ellipsis;
+}
+
+.actions ion-icon{
+    cursor: pointer;
+}
+.actions ion-icon:hover{
+    cursor: pointer;
+    color: #777;
 }
 th{
     background-color:#0062cc;
     color:#FFF;
 }
 
+.paginator{
+    height: 50px;
+    font-size: 15px;
+    margin-top: 1rem;
+}
+
 
 @media screen and (max-width: 800px) {
-    .btn{
-        z-index: 1;
-        margin-top: 0.4rem;
-        width: 100px;
-        height: 40px;
-        margin-left: 65vw;
-        outline: none;
-    }
-
-    #btn-text{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: .3rem;
-    }
 
     table, tr, td, th{
         width:90vw;
@@ -68,3 +88,4 @@ th{
         font-size:15px;
     }
 }
+
