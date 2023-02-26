@@ -13,6 +13,11 @@ class CategoriaController extends Controller
         return view('categoria/categoria-read', ['categories' => $category]);
     }
 
+    public function view($id){
+        $category = Categoria::findOrFail($id);
+        return view('categoria/categoria-read-one', ['category' => $category]);
+    }
+
     public function create(){
         return view('categoria/categoria-create');
     }
@@ -59,7 +64,7 @@ class CategoriaController extends Controller
 
         $category->save();
 
-        return redirect('/')->with('msg', 'Evento criado com sucesso!');
+        return redirect('/')->with('msg', 'Categoria criada com sucesso!');
 
     }
 

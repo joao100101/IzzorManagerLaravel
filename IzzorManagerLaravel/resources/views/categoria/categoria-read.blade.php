@@ -25,9 +25,15 @@
                             <td>{{ $cat->titulo }}</td>
                             <td class="description">{{ $cat->descricao }}</td>
                             <td class="actions">
-                                <ion-icon name="eye-outline"></ion-icon>
-                                <ion-icon name="create-outline"></ion-icon>
-                                <ion-icon name="trash-outline"></ion-icon>
+                                <a href="/categoria/{{$cat->id}}" class="action-link">
+                                    <ion-icon name="eye-outline"></ion-icon>
+                                </a>
+                                <a href="#" class="action-link">
+                                    <ion-icon name="create-outline"></ion-icon>
+                                </a>
+                                <a href="#" class="action-link">
+                                    <ion-icon name="trash-outline"></ion-icon>
+                                </a>
                             </td>
                         </tr>
                     @endforeach

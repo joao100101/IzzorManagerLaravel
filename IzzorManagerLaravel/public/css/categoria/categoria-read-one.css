@@ -1,0 +1,13 @@
+.container{
+    width: 75%;
+    background-color: #878787;
+    padding: 30px;
+}
+
+.img-area{
+    width: 300px !important;
+}
+.cat-img{
+    width: 250px;
+    height: 250px;
+}

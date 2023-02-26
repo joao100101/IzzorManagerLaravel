@@ -16,8 +16,8 @@
                 <input type="text" class="form-control" id="title" name="title" placeholder="Nome da categoria">
             </div>
             <div class="form-group">
-                <label for="imagem" class="form-label">IMAGEM</label>
-                <input type="file" class="form-control" id="image" name="imagem" accept="image/*" />
+                <label for="image" class="form-label">IMAGEM</label>
+                <input type="file" class="form-control" id="image" name="image" accept="image/*" />
             </div>
             <div class="form-group">
                 <label for="desc" class="form-label">DESCRIÇÃO</label>

@@ -61,10 +61,14 @@ td{
     text-overflow: ellipsis;
 }
 
-.actions ion-icon{
+.action-link{
+    color: black;
+}
+
+.action-link{
     cursor: pointer;
 }
-.actions ion-icon:hover{
+.action-link:hover{
     cursor: pointer;
     color: #777;
 }
