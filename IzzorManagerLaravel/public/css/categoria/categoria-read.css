@@ -55,10 +55,19 @@ td{
     overflow: hidden;
 }
 
+.cat-title{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-overflow: ellipsis;
+    margin-left: .4rem;
+}
+
 .description{
     display: flex;
     justify-content: left;
     text-overflow: ellipsis;
+    margin-left: .4rem;
 }
 
 .action-link{

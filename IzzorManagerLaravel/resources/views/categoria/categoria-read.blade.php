@@ -22,7 +22,7 @@
 
                     @foreach ($categories as $cat)
                         <tr>
-                            <td>{{ $cat->titulo }}</td>
+                            <td class="cat-title">{{ $cat->titulo }}</td>
                             <td class="description">{{ $cat->descricao }}</td>
                             <td class="actions">
                                 <a href="/categoria/{{$cat->id}}" class="action-link">

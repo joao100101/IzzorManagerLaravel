@@ -15,6 +15,9 @@ class CategoriaController extends Controller
 
     public function view($id){
         $category = Categoria::findOrFail($id);
+        if($category->imagem == ''){
+            $category->imagem = 'sem-foto.png';
+        }
         return view('categoria/categoria-read-one', ['category' => $category]);
     }
 
@@ -35,7 +38,7 @@ class CategoriaController extends Controller
         if(strlen($request->title) > 40){
             return redirect('/categoria/create')->with('msg-error', 'Categoria excede o limite de tamanho do titulo!');
         }
-        if(strlen($request->desc) > 100){
+        if(strlen($request->desc) > 200){
             return redirect('/categoria/create')->with('msg-error', 'Categoria excede o limite de tamanho da descrição!');
         }
 
@@ -58,7 +61,7 @@ class CategoriaController extends Controller
             $category->imagem = $imageName;
 
         }else{
-            $category->imagem = '';
+            $category->imagem = 'sem-foto.png';
         }
 
 

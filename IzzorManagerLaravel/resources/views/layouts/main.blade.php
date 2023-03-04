@@ -55,7 +55,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/produtos" class="nav-link">
                             <ion-icon name="storefront-outline"></ion-icon>
                             PRODUTOS
                         </a>

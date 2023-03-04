@@ -14,9 +14,17 @@
     <div class="area-categoria">
         <div class="image-area">
             <img src="/img/categories/{{$category->imagem}}" alt="Imagem da Categoria" class="cat-img">
+            <a class="btn btn-primary btn-sm" id="btn-produtos" href="#" role="button">
+                <ion-icon name="storefront-outline" size="small"></ion-icon>
+                <p id="btn-text">PRODUTOS</p>
+            </a>
+            <a class="btn btn-primary btn-sm" id="btn-produtos" href="#" role="button">
+                    <ion-icon name="create-outline" size="small"></ion-icon>
+                    <p id="btn-text">EDITAR</p>
+            </a>
         </div>
-        <h1>{{$category->titulo}}</h1>
         <div class="desc-area">
+        <h1>{{$category->titulo}}</h1>
             {{$category->descricao}}
         </div>
     </div>
