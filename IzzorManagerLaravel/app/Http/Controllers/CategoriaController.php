@@ -34,7 +34,9 @@ class CategoriaController extends Controller
 
 
     public function store(Request $request) {
-
+        if($request->title == null || $request->desc == null){
+            return redirect('/categoria/create')->with('msg-error', 'Categoria inválida, verifique se os campos foram preenchidos corretamente.');
+        }
         if(strlen($request->title) > 40){
             return redirect('/categoria/create')->with('msg-error', 'Categoria excede o limite de tamanho do titulo!');
         }
