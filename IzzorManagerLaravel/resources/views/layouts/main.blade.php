@@ -49,7 +49,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/" class="nav-link">
                             <ion-icon name="apps-outline"></ion-icon>
                             CATEGORIAS
                         </a>

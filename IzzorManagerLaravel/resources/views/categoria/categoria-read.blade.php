@@ -28,7 +28,7 @@
                                 <a href="/categoria/{{$cat->id}}" class="action-link">
                                     <ion-icon name="eye-outline"></ion-icon>
                                 </a>
-                                <a href="#" class="action-link">
+                                <a href="/categoria/edit/{{$cat->id}}" class="action-link">
                                     <ion-icon name="create-outline"></ion-icon>
                                 </a>
                                 <a href="#" class="action-link">
