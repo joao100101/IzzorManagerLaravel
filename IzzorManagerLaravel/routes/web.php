@@ -19,6 +19,7 @@ Route::get('/', [CategoriaController::class, 'index']);
 Route::get('/categoria/create', [CategoriaController::class, 'create']);
 Route::post('/categoria', [CategoriaController::class, 'store']);
 Route::get('/categoria/edit/{id}', [CategoriaController::class, 'edit']);
+Route::put('/categoria/update/{id}', [CategoriaController::class, 'update']);
 Route::get('/categoria/{id}', [CategoriaController::class, 'view']);
 
 Route::get('/produtos', [ProdutoController::class, 'index']);

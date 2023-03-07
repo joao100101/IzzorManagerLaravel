@@ -31,9 +31,9 @@
                 <label for="cat" class="form-label">CATEGORIA</label>
                 <select class="form-select" name="cat" aria-label="Selecionar Categoria">
                     <option selected>Categorias</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    @foreach ($categories as $cat)
+                        <option value="{{$loop->index}}">{{$cat->titulo}}</option>
+                    @endforeach
                 </select>
             </div>
 
