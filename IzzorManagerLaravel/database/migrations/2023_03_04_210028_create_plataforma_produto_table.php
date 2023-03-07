@@ -16,12 +16,15 @@ return new class extends Migration
         Schema::create('plataforma_produto', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->unsignedBigInteger('produto_id');
+            $table->unsignedBigInteger('plataforma_id');
             $table->double('valor_frete');
             $table->double('taxas_porcentagem');
             $table->double('taxas_fixas');
+            
 
             $table->foreign('produto_id')->references('id')->on('produtos')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('plataforma_id')->references('id')->on('plataformas')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('plataforma_id')->references('id')->on('plataforma')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

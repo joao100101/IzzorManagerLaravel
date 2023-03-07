@@ -22,3 +22,4 @@ Route::get('/categoria/edit/{id}', [CategoriaController::class, 'edit']);
 Route::get('/categoria/{id}', [CategoriaController::class, 'view']);
 
 Route::get('/produtos', [ProdutoController::class, 'index']);
+Route::get('/produtos/create', [ProdutoController::class, 'create']);
