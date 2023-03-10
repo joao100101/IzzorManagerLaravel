@@ -12,7 +12,7 @@
         asadsadsad
         sadassadsad
         asdassaddsasaddsa
-        
+
         <form action="/categoria" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
