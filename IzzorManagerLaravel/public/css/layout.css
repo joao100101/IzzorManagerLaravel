@@ -1,6 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+
 body {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
     font-family: 'Roboto', sans-serif;
+}
+main{
+    box-sizing: border-box;
+    min-height: 100%;
+}
+.main-content{
+    min-height: 100%;
+    overflow: hidden;
 }
 
 .banner-area {
@@ -77,14 +100,27 @@ body {
 
 footer {
     position: absolute;
+    margin-top: 2rem;
     bottom: 0;
+    top: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 10px;
+    align-items: flex-end;
     width: 100%;
     height: 40px;
     background-color: black;
     color: white;
+}
+
+.footer-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-content p{
+    margin: 0;
 }
 /*MOBILE AREA*/
 
@@ -126,6 +162,7 @@ footer {
     .navbar{
         justify-content: flex-start;
         width: calc(var(--vw, 1vw) * 100);
+        height: 30%;
     }
     #nav-padrao {
         position: absolute;
@@ -188,7 +225,8 @@ footer {
         text-align: center;
         font-size: 15px;
         height: 10vh;
-        top: calc(var(--vh, 1vh) * 100);
+        /* top: calc(var(--vh, 1vh) * 110); */
+        top: 100%;
     }
 
 }

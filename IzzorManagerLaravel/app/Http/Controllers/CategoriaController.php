@@ -72,15 +72,26 @@ class CategoriaController extends Controller
 
 
         $category->save();
-
         return redirect('/')->with('msg', 'Categoria criada com sucesso!');
+    }
+
+
+
+
+    // TESTE DE UPDATE
+    public function updateto(Request $request){
+        $novo = $request->all();
+        $atual = Categoria::findOrFail($request->id);
+
+        $atual->update($novo);
+        return redirect('/')->with('msg', 'Categoria editada com sucesso no debug!');
     }
 
     public function update(Request $request)
     {
         
+        
         $data = $request->all();
-
         if ($request->titulo == null || $request->descricao == null) {
             return redirect('/categoria/edit/'. $request->id)->with('msg-error', 'Categoria inválida, verifique se os campos foram preenchidos corretamente.');
         }
@@ -91,7 +102,7 @@ class CategoriaController extends Controller
             return redirect('/categoria/edit/'. $request->id)->with('msg-error', 'Categoria excede o limite de tamanho da descrição!');
         }
         // Image Upload
-        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+        if ($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
 
             $requestImage = $request->imagem;
 
@@ -101,11 +112,11 @@ class CategoriaController extends Controller
 
             $requestImage->move(public_path('img/categories'), $imageName);
 
-            $data['image'] = $imageName;
+            $data['imagem'] = $imageName;
         }
 
         Categoria::findOrFail($request->id)->update($data);
-
-        return redirect('/')->with('msg', 'Categoria editada com sucesso!'.$request->title);
+        
+        return redirect('/')->with('msg', 'Categoria editada com sucesso!');
     }
 }

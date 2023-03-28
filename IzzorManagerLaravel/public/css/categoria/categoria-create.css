@@ -1,8 +1,9 @@
-#category-create-container{
+#category-create-container {
     margin-top: 2rem;
     text-align: center;
 }
-#category-create-container input{
+
+#category-create-container input {
     margin-top: .5rem;
     width: 100%;
     display: flex;
@@ -10,19 +11,83 @@
 }
 
 
-.form-group{
+.form-group {
     display: flex;
     flex-direction: column;
 }
 
-.form-group .form-label{
+.form-group .form-label {
     margin-right: 100%;
     margin-bottom: 0;
     margin-top: 1rem;
 }
 
-textarea{
+textarea {
     max-height: 10rem;
 }
 
 
+@media only screen and (device-width: 820px) and (device-height: 1180px) and (orientation : portrait) {
+    * {
+        font-size: 28px;
+    }
+
+    .col-md-6{
+        margin: 0 !important;
+    }
+    #category-create-container input {
+        margin-top: .5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #category-create-container {
+        margin: auto;
+        min-width: 100%;
+    }
+}
+
+
+/* IPAD MINI */
+@media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation : portrait) {
+    * {
+        font-size: 28px;
+    }
+
+    .col-md-6{
+        margin: 0 !important;
+    }
+    #category-create-container input {
+        margin-top: .5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #category-create-container {
+        margin: auto;
+        min-width: 100%;
+    }
+}
+
+@media only screen and (device-width: 912px) and (device-height: 1368px) and (orientation : portrait) {
+    * {
+        font-size: 28px;
+    }
+
+    .col-md-6{
+        margin: 0 !important;
+    }
+    #category-create-container input {
+        margin-top: .5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #category-create-container {
+        margin: auto;
+        min-width: 100%;
+    }
+}

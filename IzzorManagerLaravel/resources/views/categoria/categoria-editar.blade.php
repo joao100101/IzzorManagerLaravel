@@ -13,7 +13,7 @@
             @csrf
             @method('PUT')
             <div class="form-group">
-                <label for="title" class="form-label">TÍTULO</label>
+                <label for="titulo" class="form-label">TÍTULO</label>
                 <input type="text" class="form-control" id="title" name="titulo" placeholder="Nome da categoria" value="{{$categoria->titulo}}">
             </div>
             <div class="form-group">

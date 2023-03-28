@@ -1,169 +1,218 @@
-#btn-voltar{
-    margin-top: .7rem;
-    margin-left: .7rem;
-    width: 5rem;
-    height: 2rem;
-}
 .container{
-    width: 75%;
-    height: 55vh;
-    /* background-color: #c6cace; */
-    background-color: rgb(41, 41, 41);
-    color: white;
-    padding: 30px;
-    border-radius: 5px;
-}
-.image-area{
-    width: 300px;
-    margin: 0;
-    position: absolute;
-}
-.cat-img{
-    width: 250px;
-    height: 250px;
-}
-
-#btn-produtos{
-    display: flex;
-    justify-content: center;
-    width: 250px;
-    height: 2rem;
-    padding-left: 2rem;
-    margin-top: .7rem;
-}
-#btn-produtos ion-icon{
-    float: right;
-}
-#btn-produtos #btn-text{
-    margin-left: .3rem;
-    width: 40%;
-    text-align: left;
-}
-
-.desc-area{
-    max-width: 50%;
-    margin-left: 15%;
+    margin-top: 2rem;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     flex-direction: column;
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+.btn{
+    justify-self: flex-start;
+    align-self: flex-start;
+    margin-left: 20%;
+}
+
+
+.conteudo{
+    color: white;
+    margin-top: 1rem;
+    width: 60%;
+    min-height: 50vh;
+    border-radius: 8px;
+    background-color: rgb(41, 41, 41);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.image-area{
+    padding: 10px;
+    border-radius: 8px;
+    margin: 15px;
+    background-color: white;
+    min-width: 250px;
+    min-width: 250px;
+}
+
+.image-area img{
+    max-width: 100%;
+}
+
+.buttons{
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+    min-width: 100%;
+    min-height: 50px;
+    background-color: rgb(41, 41, 41);
+    margin-bottom: 10px;
+}
+
+.buttons a{
+    min-width: 90%;
+    margin-bottom: 5px;
+    margin-left: 5%;
+}
+
+.description-area{
+    margin-top: 10px;
+    width: 100%;
 }
 
 /* MOBILE GENERAL */
 @media(max-width: 800px){
-    .container{
-        margin-top: 10px;
-        width: 100vw;
-        border-radius: 0;
-    }
-    .cat-img{
-        width: 150px;
-        height: 150px;
-    }
-    #btn-produtos{
-        padding-left: 4px;
-        width: 150px;
-        height: 30px;
-    }
-    .desc-area{
-        margin-left: 60%;
-    }
-    .container{
-        height: 65vh;
-    }
-    *{
-        font-size: 12px;
-    }
-    h1{
-        font-size: 22px;
-    }   
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.btn{
+    width: 100%;
+    justify-self: flex-start;
+    align-self: flex-start;
+    margin: 0;
+}
+.conteudo{
+    border-radius: 0;
+    min-width: 100vw;
+}
+.control-area{
+    max-width: 50%;
 }
 
-/* Galaxy FOLD */
-@media(max-width: 320px){ 
-    *{
-        font-size: 10px;
-    }
+.buttons a{
+    min-width: 80%;
+    max-width: 90%;
+    margin-bottom: 5px;
+    margin-left: 5%;
 }
-/* IPAD AIR DEITADO */
-@media only screen and (device-width: 1180px) and (device-height: 820px) and (orientation : landscape) { 
-    .desc-area{
-        margin-left: 30%;
-    }
+
+.image-area{
+    min-width: 50%;
 }
+
+.image-area img{
+    min-width: 50%;
+}
+
+}
+
+
 
 /* IPAD AIR PORTRAIT */
 @media only screen and (device-width: 820px) and (device-height: 1180px) and (orientation : portrait) { 
-    .container{
-        margin-top: 10%;
-        width: 100%;
-    }
-    .desc-area{
-        margin-left: 50%;
-    }
-    h1{
-        font-size: 30px;
-    }
     *{
-        font-size: 20px;
-    }
-    #btn-produtos{
-        padding-left: 7px;
-    }
-}
-
-/* IPAD MINI LANDSCAPE */
-@media only screen and (device-width: 1024px) and (device-height: 768px) and (orientation : landscape) { 
-    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
         font-size: 18px;
     }
-    h1{
-        font-size: 30px;
+    .btn{
+        width: 100%;
+        justify-self: flex-start;
+        align-self: flex-start;
+        margin: 0;
     }
-    .desc-area{
-        margin-left: 35%;
+    .conteudo{
+        border-radius: 0;
+        min-width: 100vw;
     }
-    #btn-produtos{
-        padding-left: 5px;
+    .control-area{
+        max-width: 50%;
     }
-}
-/* IPAD MINI PORTRAIT */
-@media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation : portrait) {
-    #btn-voltar{
-        margin-left: 3.4%;
+    
+    .buttons a{
+        min-width: 80%;
+        max-width: 90%;
+        margin-bottom: 5px;
+        margin-left: 5%;
     }
-    *{
-        font-size: 22px;
+    
+    .image-area{
+        min-width: 50%;
     }
-    h1{
-        font-size: 35px;
-    }
-    .cat-img{
-        width: 250px;
-        height: 250px;
-    }
-    #btn-produtos{
-        width: 250px;
-        height: 50px;
-    }
-    .desc-area{
-        margin-left: 40%;
+    
+    .image-area img{
+        min-width: 50%;
     }
 }
 
-/* NEST HUB */
-@media only screen and (device-width: 1024px) and (device-height: 600px) and (orientation : landscape) {
+
+/* IPAD MINI PORTRAIT */
+@media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation : portrait) {
     *{
-        font-size: 15px;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 22px;
     }
-    h1{
-        font-size: 30px;
+    .btn{
+        width: 100%;
+        justify-self: flex-start;
+        align-self: flex-start;
+        margin: 0;
     }
-    .container{
-        padding-top: 12px;
-        height: calc(var(--vh, 1vh) * 63);
+    .conteudo{
+        border-radius: 0;
+        min-width: 100vw;
     }
-    .desc-area{
-        margin-left: 35%;
+    .control-area{
+        max-width: 50%;
+    }
+    
+    .buttons a{
+        min-width: 80%;
+        max-width: 90%;
+        margin-bottom: 5px;
+        margin-left: 5%;
+    }
+    
+    .image-area{
+        min-width: 50%;
+    }
+    
+    .image-area img{
+        min-width: 50%;
+    }
+}
+
+
+/* SURFACE PRO */
+@media only screen and (device-width: 912px) and (device-height: 1368px) and (orientation : portrait) {
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 26px;
+    }
+    .btn{
+        width: 100%;
+        justify-self: flex-start;
+        align-self: flex-start;
+        margin: 0;
+    }
+    .conteudo{
+        border-radius: 0;
+        min-width: 100vw;
+    }
+    .control-area{
+        max-width: 50%;
+    }
+    
+    .buttons a{
+        min-width: 80%;
+        max-width: 90%;
+        margin-bottom: 5px;
+        margin-left: 5%;
+    }
+    
+    .image-area{
+        min-width: 50%;
+    }
+    
+    .image-area img{
+        min-width: 50%;
     }
 }

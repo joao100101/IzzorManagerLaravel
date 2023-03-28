@@ -71,16 +71,20 @@
         </nav>
     </header>
     <main>
-        @if (session('msg'))
-            <p class="flash-msg">{{ session('msg') }}</p>
-        @endif
-        @if (session('msg-error'))
-        <p class="flash-msg-error">{{ session('msg-error') }}</p>
-    @endif
-        @yield('content')
+        <div class="main-content">
+            @if (session('msg'))
+                <p class="flash-msg">{{ session('msg') }}</p>
+            @endif
+            @if (session('msg-error'))
+                <p class="flash-msg-error">{{ session('msg-error') }}</p>
+            @endif
+            @yield('content')
+        </div>
     </main>
     <footer>
-        <p>IZZOR - CNPJ: 38.715.008/0001-07 &copy; Todos os direitos reservados 2023.</p>
+        <div class="footer-content">
+            <p>IZZOR - CNPJ: 38.715.008/0001-07 &copy; Todos os direitos reservados 2023.</p>
+        </div>
     </footer>
     <script src="/js/mobile-navbar.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

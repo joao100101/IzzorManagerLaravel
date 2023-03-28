@@ -9,5 +9,14 @@ class Categoria extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['titulo, descricao, _token'];
+
+    protected $casts = [
+        'items' => 'array'
+    ];
+
+    protected $dates = ['date'];
+
+    protected $guarded = [];
+
+    protected $fillable = ['descricao, _token'];
 }

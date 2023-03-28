@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://8000-joao100101-izzormanager-8072slxa0uz.ws-us89b.gitpod.io'),
 
     'asset_url' => env('ASSET_URL'),
 

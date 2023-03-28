@@ -10,6 +10,7 @@
     <div id="category-create-container" class="col-md-6 offset-md-3">
         <h1>Criar Categoria</h1>
         <form action="/categoria" method="POST" enctype="multipart/form-data">
+        
             @csrf
             <div class="form-group">
                 <label for="title" class="form-label">TÍTULO</label>

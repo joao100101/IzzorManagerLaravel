@@ -3,33 +3,33 @@
 @section('title', 'Categoria ' . $category->titulo)
 
 @section('head')
-<link rel="stylesheet" href="/css/categoria/categoria-read-one.css">
+    <link rel="stylesheet" href="/css/categoria/categoria-read-one.css">
 @endsection
 @section('content')
-
-<a class="btn btn-primary btn-sm" id="btn-voltar" href="/" role="button">
-    <p id="btn-text">VOLTAR</p>
-</a>
-<div class="container">
-    <div class="area-categoria">
-        <div class="image-area">
-            <img src="/img/categories/{{$category->imagem}}" alt="Imagem da Categoria" class="cat-img">
-            <a class="btn btn-primary btn-sm" id="btn-produtos" href="#" role="button">
-                <ion-icon name="storefront-outline" size="small"></ion-icon>
-                <p id="btn-text">PRODUTOS</p>
-            </a>
-            <a class="btn btn-primary btn-sm" id="btn-produtos" href="#" role="button">
-                    <ion-icon name="create-outline" size="small"></ion-icon>
-                    <p id="btn-text">EDITAR</p>
-            </a>
-        </div>
-        <div class="desc-area">
-        <h1>{{$category->titulo}}</h1>
-            {{$category->descricao}}
+    <div class="container">
+        <a class="btn btn-primary btn-sm" id="btn-voltar" href="/" role="button">
+            VOLTAR
+        </a>
+        <div class="conteudo">
+            <div class="control-area">
+                <div class="image-area">
+                    <img src="/img/categories/{{ $category->imagem }}" alt="Imagem Da Categoria">
+                </div>
+                <div class="buttons">
+                    <a class="btn btn-primary btn-sm" id="btn-voltar" href="/categoria/edit/{{ $category->id }}"
+                        role="button">
+                        EDITAR
+                    </a>
+                    <a class="btn btn-primary btn-sm" id="btn-voltar" href="/" role="button">
+                        PRODUTOS
+                    </a>
+                </div>
+            </div>
+            <div class="description-area">
+                <h1>{{ $category->titulo }}</h1>
+                <p>{{ $category->descricao }}</p>
+            </div>
         </div>
     </div>
-</div>
-
-
 
 @endsection

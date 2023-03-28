@@ -11,7 +11,7 @@
         <div class="container">
             <div class="table-area">
                 <a class="btn btn-primary btn-sm" id="btn-criar" href="categoria/create" role="button">
-                    <p id="btn-text">CRIAR NOVA</p>
+                    CRIAR NOVA
                 </a>
                 <table class="tabela-categorias">
                     <tr>
