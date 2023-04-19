@@ -1,8 +1,9 @@
-#category-create-container{
+#produto-create-container {
     margin-top: 2rem;
     text-align: center;
 }
-#category-create-container input{
+
+#produto-create-container input {
     margin-top: .5rem;
     width: 100%;
     display: flex;
@@ -10,19 +11,88 @@
 }
 
 
-.form-group{
+.form-group {
     display: flex;
     flex-direction: column;
 }
 
-.form-group .form-label{
+.form-group .form-label {
     margin-right: 100%;
     margin-bottom: 0;
     margin-top: 1rem;
 }
 
-textarea{
+label{
+    width: 100%;
+    text-align: left;
+    margin-left: 5px;
+}
+textarea {
     max-height: 10rem;
 }
 
 
+@media only screen and (device-width: 820px) and (device-height: 1180px) and (orientation : portrait) {
+    * {
+        font-size: 28px;
+    }
+
+    .col-md-6{
+        margin: 0 !important;
+    }
+    #produto-create-container input {
+        margin-top: .5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #produto-create-container {
+        margin: auto;
+        min-width: 100%;
+    }
+}
+
+
+/* IPAD MINI */
+@media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation : portrait) {
+    * {
+        font-size: 28px;
+    }
+
+    .col-md-6{
+        margin: 0 !important;
+    }
+    #produto-create-container input {
+        margin-top: .5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #produto-create-container {
+        margin: auto;
+        min-width: 100%;
+    }
+}
+
+@media only screen and (device-width: 912px) and (device-height: 1368px) and (orientation : portrait) {
+    * {
+        font-size: 28px;
+    }
+
+    .col-md-6{
+        margin: 0 !important;
+    }
+    #produto-create-container input {
+        margin-top: .5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #produto-create-container {
+        margin: auto;
+        min-width: 100%;
+    }
+}

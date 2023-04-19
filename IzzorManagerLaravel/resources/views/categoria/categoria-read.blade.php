@@ -13,8 +13,9 @@
                 <a class="btn btn-primary btn-sm" id="btn-criar" href="categoria/create" role="button">
                     CRIAR NOVA
                 </a>
-                <table class="tabela-categorias">
-                    <tr>
+                <table class="tabela-categorias" border="1px">
+                    <tr class="table-header">
+                        <th class="miniatura">MINIATURA</th>
                         <th>NOME</th>
                         <th>DESCRIÇÃO</th>
                         <th>AÇÕES</th>
@@ -22,17 +23,19 @@
 
                     @foreach ($categories as $cat)
                         <tr>
+                            <td class="miniatura"><img src="./img/categories/{{$cat->imagem}}"></td>
                             <td class="cat-title">{{ $cat->titulo }}</td>
                             <td class="description">{{ $cat->descricao }}</td>
                             <td class="actions">
-                                <a href="/categoria/{{$cat->id}}" class="action-link">
+                                <a href="/categoria/{{ $cat->id }}" class="action-link">
                                     <ion-icon name="eye-outline"></ion-icon>
                                 </a>
-                                <a href="/categoria/edit/{{$cat->id}}" class="action-link">
+                                <a href="/categoria/edit/{{ $cat->id }}" class="action-link">
                                     <ion-icon name="create-outline"></ion-icon>
                                 </a>
-                                <a href="#" class="action-link">
+                                <a data-bs-toggle="modal" data-bs-target="#modal-{{ $cat->id }}">
                                     <ion-icon name="trash-outline"></ion-icon>
+                                    @include('categoria/categoria-delete')
                                 </a>
                             </td>
                         </tr>
@@ -43,10 +46,10 @@
                 {{ $categories->links() }}
             </div>
         @else
-            <p>Não há categorias criadas, deseja criar uma nova?</p>
-            <a class="btn btn-primary btn-sm" id="btn-criar" href="categoria/create" role="button">
-                <p id="btn-text">CRIAR NOVA</p>
-            </a>
+            <p class="sem-categorias">Não há categorias criadas, <a href="categoria/create">
+                    CLIQUE AQUI
+                </a> para criar uma nova.</p>
+
     @endif
     </div>
 @endsection

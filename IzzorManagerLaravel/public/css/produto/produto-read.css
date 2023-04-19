@@ -1,3 +1,234 @@
 .sem-produtos{
     margin: 15px;
 }
+
+.titulo{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.container{
+    width: calc(var(--vw, 1vw) * 100);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.table-area{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+
+.table-area #btn-criar{
+    margin-bottom: .5rem;
+    width: 20rem;
+    align-self: flex-end;
+}
+
+#btn-criar{
+    background-color: #0062cc;
+    border-radius: 7px;
+}
+#btn-criar:hover{
+    background-color: #0b5ed7;
+}
+
+.btn{
+    height: 30px;
+}
+
+#btn-criar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+table{
+    border: solid black 1px;
+}
+table, tr, td, th{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:1250px;
+    padding:0px;
+    font-size:20px;
+}
+td{
+    width:300px;
+    height:30px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.prod-title{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-overflow: ellipsis;
+    margin-left: .4rem;
+}
+
+.description{
+    display: flex;
+    justify-content: left;
+    text-overflow: ellipsis;
+    margin-left: .4rem;
+}
+
+.action-link{
+    color: black;
+}
+
+.action-link{
+    cursor: pointer;
+}
+.action-link:hover{
+    cursor: pointer;
+    color: #777;
+}
+th{
+    background-color:#0062cc;
+    color:#FFF;
+}
+
+.paginator{
+    height: 50px;
+    font-size: 15px;
+    margin-top: 1rem;
+}
+
+
+@media screen and (max-width: 800px) {
+    #btn-criar{
+        min-width: 100%;
+    }
+    h1{
+        font-size: 35px;
+    }
+
+    th{
+        min-height: 35px;
+        width: auto;
+        font-size: 8px !important;
+    }
+    table, tr, td, th{
+        width:90vw;
+        padding:0px;
+        font-size:10px;
+    }
+}
+
+@media only screen and (device-width: 414px) and (device-height: 896px) and (orientation : portrait) {
+    *{
+        font-size: 12px;
+    }
+    table, tr, td, th{
+        font-size:12px;
+    }
+}
+
+@media only screen and (device-width: 390px) and (device-height: 844px) and (orientation : portrait) {
+    *{
+        font-size: 12px;
+    }
+}
+
+/* S20 Ultra */
+
+@media only screen and (device-width: 412px) and (device-height: 915px) and (orientation : portrait) {
+    *{
+        font-size: 14px;
+    }
+}
+
+/* IPAD AIR */
+@media only screen and (device-width: 820px) and (device-height: 1180px) and (orientation : portrait) { 
+    *{
+        font-size: 18px;
+    }
+
+    #btn-criar{
+        min-width: 100%;
+        height: 35px;
+    }
+
+    th{
+        min-height: 60px;
+        font-size: 15px;
+    }
+
+
+    table, tr, td, th{
+        width:90vw;
+        padding:0px;
+    }
+
+
+}
+
+
+/* IPAD MINI */
+@media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation : portrait) {
+    *{
+        font-size: 18px;
+    }
+    #btn-criar{
+        height: 35px;
+    }
+    th{
+        min-height: 45px;
+        font-size: 12px !important;
+    }
+    table, tr, td{
+        font-size:18px;
+    }
+}
+
+@media only screen and (device-width: 912px) and (device-height: 1368px) and (orientation : portrait) {
+    *{
+        font-size: 18px;
+    }
+    #btn-criar{
+        height: 35px;
+        min-width: 100%;
+    }
+    th{
+        min-height: 45px;
+        font-size: 12px !important;
+    }
+    table, tr, td{
+        width: 90vw;
+        font-size:18px;
+    }
+}
+
+/* galaxy fold */
+@media only screen and (device-width: 280px) and (device-height: 653px) and (orientation : portrait) {
+    #btn-criar{
+        height: 35px;
+    }
+    th{
+        font-size: 6px !important;
+    }
+}
+
+/* nest hub */
+@media only screen and (device-width: 1024px) and (device-height: 600px) and (orientation : landscape) {
+    #btn-criar{
+        min-width: 100%;
+        height: 35px;
+    }
+    
+    th{
+        height: 55px;
+    }
+    table, tr, td{
+        max-width: 90vw;
+        font-size:18px;
+    }
+}

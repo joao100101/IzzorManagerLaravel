@@ -1,3 +1,20 @@
+.sem-categorias{
+    margin: 15px;
+}
+
+.table-header{
+    background-color: #0062CC;
+}
+.miniatura{
+    margin-right: 14px;
+    display: flex;
+    justify-content: center;
+}
+.miniatura img{
+    width: 25px;
+    height: 25px;
+}
+
 .titulo{
     text-align: center;
     margin-top: 2rem;
@@ -54,8 +71,9 @@ table, tr, td, th{
     padding:0px;
     font-size:20px;
 }
+
 td{
-    width:300px;
+    width:25%;
     height:30px;
     white-space: nowrap;
     overflow: hidden;
@@ -90,6 +108,8 @@ td{
 th{
     background-color:#0062cc;
     color:#FFF;
+    width: 25%;
+    text-align: center;
 }
 
 .paginator{

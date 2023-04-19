@@ -18,5 +18,4 @@ class Categoria extends Model
 
     protected $guarded = [];
 
-    protected $fillable = ['descricao, _token'];
 }

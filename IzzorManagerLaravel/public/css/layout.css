@@ -137,6 +137,10 @@ footer {
 }
 
 @media only screen and (max-width: 999px) and (orientation: landscape){
+    .banner-area .logo {
+        margin-left: 0;
+    }
+    
     footer{
         width: calc(var(--vw, 1vw) * 100);
         bottom: 0;
@@ -147,6 +151,9 @@ footer {
     }
 }
 @media only screen and (max-width: 999px) and (not (orientation: landscape)){
+    .banner-area .logo {
+        margin-left: 0;
+    }    
     body{
         overflow-x: hidden;
         width: 100vw;
@@ -232,6 +239,10 @@ footer {
 }
 
 @media(max-width: 320px){ 
+    .banner-area .logo {
+        margin-left: 0;
+    }
+    
     *{
         font-size: 10px;
     }

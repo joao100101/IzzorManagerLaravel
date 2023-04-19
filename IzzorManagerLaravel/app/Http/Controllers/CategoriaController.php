@@ -78,17 +78,8 @@ class CategoriaController extends Controller
 
 
 
-    // TESTE DE UPDATE
-    public function updateto(Request $request){
-        $novo = $request->all();
-        $atual = Categoria::findOrFail($request->id);
 
-        $atual->update($novo);
-        return redirect('/')->with('msg', 'Categoria editada com sucesso no debug!');
-    }
-
-    public function update(Request $request)
-    {
+    public function update(Request $request){
         
         
         $data = $request->all();
@@ -114,9 +105,18 @@ class CategoriaController extends Controller
 
             $data['imagem'] = $imageName;
         }
+        
+        Categoria::findOrFail($request->id)->update($request->all());
 
-        Categoria::findOrFail($request->id)->update($data);
         
         return redirect('/')->with('msg', 'Categoria editada com sucesso!');
+    }
+
+    public function destroy($id) {
+
+        Categoria::findOrFail($id)->delete();
+
+        return redirect('/')->with('msg', 'Categoria excluída com sucesso!');
+
     }
 }

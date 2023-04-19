@@ -20,7 +20,7 @@
                         role="button">
                         EDITAR
                     </a>
-                    <a class="btn btn-primary btn-sm" id="btn-voltar" href="/" role="button">
+                    <a class="btn btn-primary btn-sm" id="btn-voltar" href="/categoria/{{$category->id}}/produtos" role="button">
                         PRODUTOS
                     </a>
                 </div>

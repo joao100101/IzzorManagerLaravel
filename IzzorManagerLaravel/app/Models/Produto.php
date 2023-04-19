@@ -18,9 +18,12 @@ class Produto extends Model
                     ->withPivot('quantidade', 'preco_unitario');
     }
 
-    public function plataformas()
+    public function plataforma()
     {
-        return $this->belongsToMany(Plataforma::class, 'plataforma_produto')
-                    ->withPivot('valor_frete', 'taxas_porcentagem', 'taxas_fixas');
+        return $this->belongsTo(Plataforma::class);
+    }
+
+    public function categoria(){
+        return $this->belongsTo(Categoria::class);
     }
 }            
