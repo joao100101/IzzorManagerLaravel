@@ -7,7 +7,7 @@
 @endsection
 @section('content')
     <div class="container">
-        <a class="btn btn-primary btn-sm" id="btn-voltar" href="/" role="button">
+        <a class="btn btn-primary btn-sm" id="btn-voltar" href="/categoria" role="button">
             VOLTAR
         </a>
         <div class="conteudo">

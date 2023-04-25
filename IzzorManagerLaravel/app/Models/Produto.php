@@ -15,7 +15,7 @@ class Produto extends Model
     public function materiais()
     {
         return $this->belongsToMany(Material::class, 'produto_material')
-                    ->withPivot('quantidade', 'preco_unitario');
+            ->withPivot('quantidade', 'preco_unitario');
     }
 
     public function plataforma()
@@ -23,7 +23,10 @@ class Produto extends Model
         return $this->belongsTo(Plataforma::class);
     }
 
-    public function categoria(){
+    public function categoria()
+    {
         return $this->belongsTo(Categoria::class);
     }
-}            
+
+    protected $guarded = [];
+}

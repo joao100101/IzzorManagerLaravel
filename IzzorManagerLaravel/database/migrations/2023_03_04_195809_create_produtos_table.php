@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -19,8 +18,11 @@ return new class extends Migration
             $table->string('imagem');
             $table->string('titulo');
             $table->text('descricao');
-            $table->unsignedBigInteger('categoria_id'); 
-            $table->foreign('categoria_id')->references('id')->on('Categorias')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('categoria_id');
+            // $table->foreign('categoria_id')->references('id')->on('categorias');
+            $table->foreign('categoria_id')
+                ->references('id')->on('categorias')
+                ->onDelete('cascade');
             $table->double('custo_peca');
             $table->double('valor_venda');
         });

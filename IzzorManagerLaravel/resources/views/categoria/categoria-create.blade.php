@@ -25,7 +25,7 @@
                 <textarea class="form-control" id="desc" name="desc" placeholder="Descrição da categoria"></textarea>
             </div>
             <input type="submit" class="btn btn-primary btn-create" value="Criar Categoria">
-            <a href="/">
+            <a href="/categoria">
                 <input type="button" class="btn btn-primary bnt-cancel" value="Cancelar">
             </a>
         </form>

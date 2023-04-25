@@ -6,10 +6,11 @@
     <link rel="stylesheet" type="text/css" href="/css/produto/produto-create.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
     <script src="/js/jquery.maskMoney.min.js" type="text/javascript"></script>
+    <script src="/js/currencyMaskConfig.js"></script><script src="/js/currencyMaskConfig.js"></script>
+    
 @endsection
 
 @section('content')
-    @include('/plataforma/plataforma-create')
     <div id="produto-create-container" class="col-md-6 offset-md-3">
         <h1>Criar Produto</h1>
         <form action="/produto/create" method="POST" enctype="multipart/form-data">
@@ -29,19 +30,12 @@
             <div class="form-group">
                 <label for="categoria_id" class="form-label">CATEGORIA</label>
                 <select class="form-select" name="categoria_id" id="categoria" aria-label="Selecionar Produto">
-                    @foreach ($categories as $cat)
-                        <option name="{{$cat->id}}" id="{{$cat->id}}" value="{{ $cat->id }}">{{ $cat->titulo }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="plataforma_id" class="form-label">PLATAFORMA DE VENDA</label>
-                <select class="form-select" name="plataforma_id" id="select-plataforma" aria-label="PLATAFORMA DE VENDA">
-                    <option value="vazia"></option>
-                    @foreach ($plataformas as $plat)
-                        <option name="{{$plat->id}}" id="{{$plat->id}}" value="{{ $plat->id }}">{{ $plat->nome }}</option>
-                    @endforeach
-                    <option value="criar">CRIAR NOVA...</option>
+                    <option value="-1">ESCOLHA UMA CATEGORIA</option>
+                    @if($categories != null)
+                        @foreach ($categories as $cat)
+                            <option name="{{$cat->id}}" id="{{$cat->id}}" value="{{ $cat->id }}">{{ $cat->titulo }}</option>
+                        @endforeach
+                    @endif
                 </select>
             </div>
             <div class="form-group">
@@ -49,8 +43,8 @@
                 <input type="text" class="form-control currency" name="custo_peca">
             </div>
             <div class="form-group">
-                <label for="valor_peca" class="form-label">VALOR DE VENDA</label>
-                <input type="text" class="form-control currency" name="valor_peca">
+                <label for="valor_venda" class="form-label">VALOR DE VENDA</label>
+                <input type="text" class="form-control currency" name="valor_venda">
             </div>
 
 
@@ -60,28 +54,4 @@
             </a>
         </form>
     </div>
-    <script>
-        var select = document.querySelector("#select-plataforma");
-        $('.modal').on('hidden.bs.modal', function() {
-            select.selectedIndex = -1;
-        })
-
-        $(document).ready(function() { //Make script DOM ready
-            $('select').change(function() { //jQuery Change Function
-                var opval = $(this).val(); //Get value from select element
-                if (opval == "criar") { //Compare it and if true
-                    $('#modal1').modal("show"); //Open Modal
-                }
-            });
-        })
-        $(function() {
-            $('.currency').maskMoney({
-                prefix: 'R$ ',
-                allowNegative: true,
-                thousands: '.',
-                decimal: ',',
-                affixesStay: true
-            });
-        })
-    </script>
 @endsection

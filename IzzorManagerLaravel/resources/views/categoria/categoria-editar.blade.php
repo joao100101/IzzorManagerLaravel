@@ -25,7 +25,7 @@
                 <textarea class="form-control" id="descricao" name="descricao" placeholder="Descrição da categoria">{{$categoria->descricao}}</textarea>
             </div>
             <input type="submit" class="btn btn-primary btn-create" value="Atualizar Categoria">
-            <a href="/">
+            <a href="/categoria">
                 <input type="button" class="btn btn-primary bnt-cancel" value="Cancelar">
             </a>
         </form>

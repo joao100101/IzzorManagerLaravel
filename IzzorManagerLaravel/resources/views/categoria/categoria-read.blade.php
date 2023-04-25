@@ -33,7 +33,7 @@
                                 <a href="/categoria/edit/{{ $cat->id }}" class="action-link">
                                     <ion-icon name="create-outline"></ion-icon>
                                 </a>
-                                <a data-bs-toggle="modal" data-bs-target="#modal-{{ $cat->id }}">
+                                <a class='action-link' data-bs-toggle="modal" data-bs-target="#modal-{{ $cat->id }}">
                                     <ion-icon name="trash-outline"></ion-icon>
                                     @include('categoria/categoria-delete')
                                 </a>
