@@ -52,7 +52,7 @@ th{
     margin: .5rem;
 }
 tr{
-    min-width: 95rem;
+    min-width: 95vw;
 }
 tr, td, th{
     width: 100%;

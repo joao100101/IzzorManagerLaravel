@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VendaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\CategoriaController;
@@ -29,6 +30,7 @@ Route::get('/categoria/{id}', [CategoriaController::class, 'ver']);
 
 //Adicionar barra de pesquisa
 Route::get('/produtos', [ProdutoController::class, 'index']);
+Route::get('/produto/{id}', [ProdutoController::class, 'readOne']);
 Route::get('/produto/create', [ProdutoController::class, 'create']);
 Route::post('/produto/create', [ProdutoController::class, 'store']);
 Route::get('/categoria/{id}/produtos', [ProdutoController::class, 'findByCategory']);
@@ -42,3 +44,6 @@ Route::get('plataforma/edit/{id}', [PlataformaController::class, 'edit']);
 Route::put('/plataforma/update/{id}', [PlataformaController::class, 'update']);
 Route::post('/plataforma/create', [PlataformaController::class, 'store']);
 Route::delete('/plataforma/delete/{id}', [PlataformaController::class, 'destroy']);
+
+
+Route::get('/vendas', [VendaController::class, 'index']);

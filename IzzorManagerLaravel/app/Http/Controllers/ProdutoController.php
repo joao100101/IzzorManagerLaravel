@@ -25,6 +25,13 @@ class ProdutoController extends Controller
         return view('produto/produto-read', ['produtos' => $produtos]);
     }
 
+    public function readOne($id){
+
+        $produto = Produto::findOrFail($id);
+
+        return view('produto/produto-read-one', ['produto' => $produto]);
+    }
+
     public function create()
     {
         $categories = Categoria::all();
