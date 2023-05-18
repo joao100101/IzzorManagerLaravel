@@ -3,17 +3,16 @@
 @section('title', 'Produtos')
 
 @section('head')
-    <link rel="stylesheet" href="./css/produto/produto-read.css">
+    <link rel="stylesheet" href="/css/produto/produto-read.css">
 @endsection
 @section('content')
     @if (count($produtos) > 0)
-        <h1 class="titulo">EXIBINDO PRODUTOS</h1>
         <div class="container">
             <div class="table-area">
-                <a class="btn btn-primary btn-sm" id="btn-criar" href="produto/create" role="button">
+                <a class="btn btn-primary btn-sm" id="btn-criar" href="/produtos/create" role="button">
                     CRIAR NOVO
                 </a>
-                <table class="tabela-produtos">
+                <table class="tabela-vendas">
                 {{-- id;imagem.titulo;descricao;categoria_id;custo_peca;valor_venda;plataforma_id --}}
                     <tr id="table-header">
                         <th>MINIATURA</th>
@@ -28,7 +27,7 @@
 
                     @foreach ($produtos as $prod)
                         <tr>
-                            <td class="miniatura"><img src="./img/products/{{$prod->imagem}}"></td>
+                            <td class="default-column-value miniatura"><img src="/img/products/{{$prod->imagem}}"></td>
                             <td class="prod-title">{{ $prod->titulo }}</td>
                             <td class="description">{{ $prod->descricao }}</td>
                             <td class="categoria">{{ $prod->categoria->titulo}}</td>

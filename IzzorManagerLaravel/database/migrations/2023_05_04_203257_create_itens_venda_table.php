@@ -16,10 +16,14 @@ return new class extends Migration
         Schema::create('itens_venda', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('venda_id');
             $table->integer('produto_id');
             $table->integer('quantidade');
-            $table->float('total');
+            $table->string('tamanho');
+            $table->string('cor');
+            $table->unsignedBigInteger('venda_id');
+            $table->foreign('venda_id')
+                ->references('id')->on('vendas')
+                ->onDelete('cascade');
         });
     }
 

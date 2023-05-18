@@ -7,9 +7,21 @@
 @endsection
 
 @section('content')
-    <div class="charts-container">
-        <div class="chart-block">
-            <canvas id="myChart"></canvas>
+    <div class="container">
+        <div class="changelog">
+        <h2>CHANGELOG</h2>
+            <ul>
+                <li>[17/05/2023] Alterado modelo da tabela de vendas.</li>
+                <li>[17/05/2023] Novo design de tabelas em desenvolvimento.</li>
+                <li>[17/05/2023] Changelog adicionado.</li>
+                <li>[17/05/2023] Página inicial reformulada.</li>
+            </ul>
+        </div>
+        <div class="charts-container">
+            <h2>DASHBOARD</h2>
+            <div class="chart-block">
+                <canvas id="myChart"></canvas>
+            </div>
         </div>
     </div>
 @endsection

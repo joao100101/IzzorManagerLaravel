@@ -18,9 +18,7 @@ class ProdutoController extends Controller
 
     public function findByCategory($id)
     {
-        $produtos = Produto::where([
-            ['categoria_id', 'like', '%' . $id . '%']
-        ])->get();
+        $produtos = Produto::where('categoria_id', $id)->paginate(20);
 
         return view('produto/produto-read', ['produtos' => $produtos]);
     }

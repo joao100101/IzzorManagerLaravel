@@ -31,7 +31,7 @@ Route::get('/categoria/{id}', [CategoriaController::class, 'ver']);
 //Adicionar barra de pesquisa
 Route::get('/produtos', [ProdutoController::class, 'index']);
 Route::get('/produto/{id}', [ProdutoController::class, 'readOne']);
-Route::get('/produto/create', [ProdutoController::class, 'create']);
+Route::get('/produtos/create', [ProdutoController::class, 'create']);
 Route::post('/produto/create', [ProdutoController::class, 'store']);
 Route::get('/categoria/{id}/produtos', [ProdutoController::class, 'findByCategory']);
 Route::get('/produto/edit/{id}', [ProdutoController::class, 'edit']);
@@ -47,3 +47,4 @@ Route::delete('/plataforma/delete/{id}', [PlataformaController::class, 'destroy'
 
 
 Route::get('/vendas', [VendaController::class, 'index']);
+Route::get('/vendas/create', [VendaController::class, 'create']);

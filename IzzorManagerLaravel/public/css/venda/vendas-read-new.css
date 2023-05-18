@@ -1,0 +1,68 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.table-area {
+    margin-top: 4rem;
+    overflow-x: auto;
+}
+
+.btn {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.384);
+    float: right;
+    margin-bottom: .5rem;
+}
+
+.tabela-vendas {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.tabela-vendas th,
+.tabela-vendas td {
+    text-align: left;
+    padding: 10px;
+}
+
+.tabela-vendas th {
+    color: white;
+    background-color: #0062cc;
+    border: 1px solid white;
+    font-weight: bold;
+}
+
+.tabela-vendas td {
+    border-bottom: 1px solid #ddd;
+}
+
+.action-link {
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+
+.action-link:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.541);
+}
+
+.action-link ion-icon:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.541);
+}
+
+@media (max-width: 768px) {
+
+    .tabela-vendas th,
+    .tabela-vendas td {
+        font-size: 14px;
+    }
+}
+
+
+

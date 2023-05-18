@@ -1,11 +1,33 @@
-.charts-container{
+.container{
+    margin-top: 5rem;
     width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+.changelog{
+    width: 50%;
+    height: 100%;
+}
+.changelog h2{
+    text-align: center;
+}
+.changelog ul{
+    margin-top: 2rem;
+}
+
+.charts-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 50%;
     height: 100%;
 }
 
 .chart-block{
-    border: solid 1px black;
     margin: 1rem;
-    width: 25%;
+    width: 75%;
     height: 25%;
 }

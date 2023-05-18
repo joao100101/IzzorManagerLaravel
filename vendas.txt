@@ -1,0 +1,22 @@
+itens que o usuário irá selecionar (Manualmente){
+    id - plataforma gera na hora da venda
+    cliente
+    Data - data picker
+    itens vendidos/cor/tamanho/quantidade
+    plataforma
+    custos_adicionais
+    valor frete
+}
+Colunas da tabela de vendas.
+Redundancia nao importa, uma vez que os valores devem ficar fixos caso seja alterado na tabela pai{
+    id
+    cliente
+    data
+    totaltaxas
+    soma_custo_itens_vendidos
+    soma_valor_venda_itens
+    custos_adicionais
+    valor_frete
+    total
+}
+
