@@ -3,6 +3,7 @@
 @section('title', 'Produtos')
 
 @section('head')
+    <link rel="stylesheet" href="/css/layouts/tabela.css">
     <link rel="stylesheet" href="/css/produto/produto-read.css">
 @endsection
 @section('content')
@@ -12,7 +13,7 @@
                 <a class="btn btn-primary btn-sm" id="btn-criar" href="/produtos/create" role="button">
                     CRIAR NOVO
                 </a>
-                <table class="tabela-vendas">
+                <table class="tabela-padrao">
                 {{-- id;imagem.titulo;descricao;categoria_id;custo_peca;valor_venda;plataforma_id --}}
                     <tr id="table-header">
                         <th>MINIATURA</th>
@@ -28,13 +29,13 @@
                     @foreach ($produtos as $prod)
                         <tr>
                             <td class="default-column-value miniatura"><img src="/img/products/{{$prod->imagem}}"></td>
-                            <td class="prod-title">{{ $prod->titulo }}</td>
-                            <td class="description">{{ $prod->descricao }}</td>
-                            <td class="categoria">{{ $prod->categoria->titulo}}</td>
-                            <td class="custo">R$ {{ $prod->custo_peca }}</td>
-                            <td class="valor">R$ {{ $prod->valor_venda }}</td>
-                            <td class="lucro">R$ {{$prod->valor_venda - $prod->custo_peca}}</td>
-                            <td class="actions">
+                            <td class="default-column-value prod-title">{{ $prod->titulo }}</td>
+                            <td class="default-column-value description">{{ $prod->descricao }}</td>
+                            <td class="default-column-value categoria">{{ $prod->categoria->titulo}}</td>
+                            <td class="default-column-value custo">R$ {{ $prod->custo_peca }}</td>
+                            <td class="default-column-value valor">R$ {{ $prod->valor_venda }}</td>
+                            <td class="default-column-value lucro">R$ {{$prod->valor_venda - $prod->custo_peca}}</td>
+                            <td class="default-column-value actions">
                                 <a href="/produto/{{ $prod->id }}" class="action-link">
                                     <ion-icon name="eye-outline"></ion-icon>
                                 </a>

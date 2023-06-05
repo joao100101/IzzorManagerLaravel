@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Venda;
 use App\Models\ItensVenda;
 use App\Models\Produto;
+use App\Models\Categoria;
 use App\Models\Plataforma;
 
 class VendaController extends Controller
@@ -29,7 +30,7 @@ class VendaController extends Controller
 
     public function create()
     {
-
         return view('vendas/venda-create');
     }
+
 }

@@ -4,16 +4,16 @@
 
 @section('head')
     <link rel="stylesheet" href="./css/categoria/categoria-read.css">
+    <link rel="stylesheet" href="/css/layouts/tabela.css">
 @endsection
 @section('content')
     @if (count($categories) > 0)
-        <h1 class="titulo">Exibindo Categorias</h1>
         <div class="container">
             <div class="table-area">
                 <a class="btn btn-primary btn-sm" id="btn-criar" href="categoria/create" role="button">
                     CRIAR NOVA
                 </a>
-                <table class="tabela-categorias" border="1px">
+                <table class="tabela-padrao">
                     <tr class="table-header">
                         <th class="miniatura">MINIATURA</th>
                         <th>NOME</th>

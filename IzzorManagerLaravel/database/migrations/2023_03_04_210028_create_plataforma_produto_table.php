@@ -18,7 +18,6 @@ return new class extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('produto_id');
             $table->unsignedBigInteger('plataforma_id');
-            $table->double('valor_frete');
             $table->double('taxas_porcentagem');
             $table->double('taxas_fixas');
             

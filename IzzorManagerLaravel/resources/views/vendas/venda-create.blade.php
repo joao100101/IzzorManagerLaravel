@@ -4,10 +4,11 @@
 
 @section('head')
     <link rel="stylesheet" type="text/css" href="/css/produto/produto-create.css" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="/css/venda/venda-create.css" />
+    <link rel="stylesheet" type="text/css" href="/css/layouts/tabela.css" />
     <script src="/js/jquery.maskMoney.min.js" type="text/javascript"></script>
-    <script src="/js/currencyMaskConfig.js"></script><script src="/js/currencyMaskConfig.js"></script>
-    
+    <script src="/js/currencyMaskConfig.js"></script>
+
 @endsection
 
 @section('content')
@@ -16,31 +17,81 @@
         <form action="/venda/create" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="titulo" class="form-label">TÍTULO</label>
-                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Nome do produto">
+                <label for="idvenda" class="form-label">ID DA VENDA</label>
+                <input type="text" class="form-control" id="idvenda" name="idvenda" placeholder="Ex: SHP1234">
             </div>
             <div class="form-group">
-                <label for="imagem" class="form-label">IMAGEM</label>
-                <input type="file" class="form-control" id="imagem" name="imagem" accept="image/*" />
+                <label for="cliente" class="form-label">CLIENTE</label>
+                <input type="text" class="form-control" id="cliente" name="cliente" placeholder="Ex: José da Silva">
             </div>
             <div class="form-group">
-                <label for="descricao" class="form-label">DESCRIÇÃO</label>
-                <textarea class="form-control" id="descricao" name="descricao" placeholder="Descrição da produto"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="custo_peca" class="form-label">CUSTO DE FABRICAÇÃO</label>
-                <input type="text" class="form-control currency" name="custo_peca">
-            </div>
-            <div class="form-group">
-                <label for="valor_venda" class="form-label">VALOR DE VENDA</label>
-                <input type="text" class="form-control currency" name="valor_venda">
-            </div>
+                <label class="form-label">PRODUTOS</label>
+                <div id="modalContainer"></div>
+
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" id="card-button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Carrinho do Cliente
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                @include('/vendas/cart-add-product')
+                                <a class="btn btn-primary btn-sm" id="btn-criar" data-bs-toggle="modal"
+                                    data-bs-target="#modal-add-prod" role="button">
+                                    ADICIONAR PRODUTO
+                                </a>
+                                <table class="tabela-padrao">
+                                    <tr id="table-header">
+                                        <th>ID</th>
+                                        <th>CATEGORIA</th>
+                                        <th>PRODUTO</th>
+                                        <th>COR</th>
+                                        <th>TAMANHO</th>
+                                        <th>QUANTIDADE</th>
+                                        <th>AÇÕES</th>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>Test</td>
+                                        <td>Test</td>
+                                        <td>Azul</td>
+                                        <td>GG</td>
+                                        <td>2</td>
+                                        <td>sim</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="observacoes" class="form-label">OBSERVAÇÕES</label>
+                    <textarea class="form-control" id="observacoes" name="observacoes" placeholder="Observações..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="valor_frete" class="form-label">VALOR DO FRETE</label>
+                    <input type="text" class="form-control currency" name="valor_frete">
+                </div>
+                <div class="form-group">
+                    <label for="total" class="form-label">TOTAL</label>
+                    <input type="text" class="form-control" name="total" value="R$ 0,00" readonly>
+                </div>
 
 
-            <input type="submit" class="btn btn-primary btn-create" value="Criar Produto">
-            <a href="/produtos">
-                <input type="button" class="btn btn-primary bnt-cancel" value="Cancelar">
-            </a>
+                <input type="submit" class="btn btn-primary btn-create" value="Criar Produto">
+                <a href="/produtos">
+                    <input type="button" class="btn btn-primary bnt-cancel" value="Cancelar">
+                </a>
         </form>
     </div>
+@endsection
+@section('script-area')
+
+    <script src="/js/venda/venda-create.js"></script>
 @endsection

@@ -1,8 +1,8 @@
 <head>
-    <link rel="stylesheet" href="/css/modal.css">
+    <link rel="stylesheet" href="/css/layouts/modal.css">
 </head>
 
-<div class="modal fade" id="modal-{{ $prod->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal-{{ $prod->id }}" tabindex="-1" aria-labelledby="modal-add-prodLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

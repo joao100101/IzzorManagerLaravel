@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="/css/modal.css">
+    <link rel="stylesheet" href="/css/layouts/modal.css">
 </head>
 
 <div class="modal fade" id="modal-{{ $plat->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

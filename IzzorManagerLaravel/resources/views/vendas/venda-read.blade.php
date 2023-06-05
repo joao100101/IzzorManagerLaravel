@@ -2,7 +2,7 @@
 
 @section('title', 'Vendas')
 @section('head')
-    <link rel="stylesheet" href="/css/venda/vendas-read-new.css">
+    <link rel="stylesheet" href="/css/layouts/tabela.css">
 
 
 
@@ -13,7 +13,7 @@
             <a class="btn btn-primary btn-sm" id="btn-criar" href="vendas/create" role="button">
                 CADASTRAR VENDA
             </a>
-            <table class="tabela-vendas">
+            <table class="tabela-padrao">
                 <tr id="table-header">
                     {{-- // id
                     // cliente
@@ -40,7 +40,8 @@
                     <tr>
                         <td class="default-column-value" id="venda-id">{{ $v->id }}</td>
                         <td class="default-column-value">{{ $v->cliente }}</td>
-                        <td class="default-column-value" id="venda-data">{{ date_format(date_create($v->data), 'd/m/Y') }}</td>
+                        <td class="default-column-value" id="venda-data">{{ date_format(date_create($v->data), 'd/m/Y') }}
+                        </td>
                         <td class="default-column-value" id="venda-plataforma">{{ $plataformas[$v->id] }}</td>
                         <td class="default-column-value" id="quantidade">{{ $itens_vendidos[$v->id] }}</td>
                         <td class="default-column-value">R$ {{ $v->total_taxas }}</td>

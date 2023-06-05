@@ -1,0 +1,16 @@
+.table-area{
+    width: 100%;
+    height: 300px;
+    border: solid 1px #ced4da;
+}
+.btn{
+    width: 100%;
+    margin-top: .5rem;
+}
+#btn-criar{
+    color: white;
+}
+#carrinho{
+    margin-top: 0;
+    padding: 0;
+}

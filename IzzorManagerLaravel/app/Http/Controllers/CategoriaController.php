@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File; 
+use Illuminate\Support\Facades\File;
 use App\Models\Categoria;
 
 class CategoriaController extends Controller
@@ -80,21 +80,22 @@ class CategoriaController extends Controller
 
 
 
-    public function update(Request $request){
-        
-        
+    public function update(Request $request)
+    {
+
+
         $data = $request->all();
         if ($request->titulo == null || $request->descricao == null) {
-            return redirect('/categoria/edit/'. $request->id)->with('msg-error', 'Categoria inválida, verifique se os campos foram preenchidos corretamente.');
+            return redirect('/categoria/edit/' . $request->id)->with('msg-error', 'Categoria inválida, verifique se os campos foram preenchidos corretamente.');
         }
         if (strlen($request->titulo) > 40) {
-            return redirect('/categoria/edit/'. $request->id)->with('msg-error', 'Categoria excede o limite de tamanho do titulo!');
+            return redirect('/categoria/edit/' . $request->id)->with('msg-error', 'Categoria excede o limite de tamanho do titulo!');
         }
         if (strlen($request->descricao) > 200) {
-            return redirect('/categoria/edit/'. $request->id)->with('msg-error', 'Categoria excede o limite de tamanho da descrição!');
+            return redirect('/categoria/edit/' . $request->id)->with('msg-error', 'Categoria excede o limite de tamanho da descrição!');
         }
 
-        if($request->imagem != 'sem-foto.png'){
+        if ($request->imagem != 'sem-foto.png') {
             File::delete('/img/categories/' . $request->imagem);
         }
 
@@ -112,18 +113,19 @@ class CategoriaController extends Controller
 
             $data['imagem'] = $imageName;
         }
-        
+
         Categoria::findOrFail($request->id)->update($data);
 
-        
+
         return redirect('/categoria')->with('msg', 'Categoria editada com sucesso!');
     }
 
-    public function destroy($id) {
+    public function destroy($id)
+    {
 
         $categoria = Categoria::findOrFail($id);
 
-        if($categoria->imagem != 'sem-foto.png'){
+        if ($categoria->imagem != 'sem-foto.png') {
             File::delete('/img/categories/' . $categoria->imagem);
         }
 
@@ -132,4 +134,5 @@ class CategoriaController extends Controller
         return redirect('/categoria')->with('msg', 'Categoria excluída com sucesso!');
 
     }
+
 }

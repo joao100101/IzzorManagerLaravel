@@ -4,6 +4,15 @@
     margin: 0 auto;
 }
 
+.sem-produtos {
+    margin: 15px;
+}
+
+.miniatura img {
+    width: 25px;
+    height: 25px;
+}
+
 .table-area {
     margin-top: 4rem;
     overflow-x: auto;
@@ -15,26 +24,26 @@
     margin-bottom: .5rem;
 }
 
-.tabela-vendas {
+.tabela-padrao {
     width: 100%;
     border-collapse: collapse;
     font-size: 15px;
 }
 
-.tabela-vendas th,
-.tabela-vendas td {
+.tabela-padrao th,
+.tabela-padrao td {
     text-align: left;
     padding: 10px;
 }
 
-.tabela-vendas th {
+.tabela-padrao th {
     color: white;
     background-color: #0062cc;
     border: 1px solid white;
     font-weight: bold;
 }
 
-.tabela-vendas td {
+.tabela-padrao td {
     border-bottom: 1px solid #ddd;
 }
 
@@ -56,13 +65,16 @@
     color: rgba(0, 0, 0, 0.541);
 }
 
+.paginator {
+    height: 50px;
+    font-size: 15px;
+    margin-top: 1rem;
+}
+
 @media (max-width: 768px) {
 
-    .tabela-vendas th,
-    .tabela-vendas td {
+    .tabela-padrao th,
+    .tabela-padrao td {
         font-size: 14px;
     }
 }
-
-
-

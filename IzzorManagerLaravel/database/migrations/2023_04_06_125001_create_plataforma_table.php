@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nome');
-            $table->double('valor_frete');
             $table->double('taxas_porcentagem');
             $table->double('taxas_fixas');
 

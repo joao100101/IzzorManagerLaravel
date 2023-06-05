@@ -3,8 +3,7 @@
 @section('title', 'Plataformas')
 
 @section('head')
-    {{-- <link rel="stylesheet" href="./css/plataforma/plataforma-read.css"> --}}
-    <link rel="stylesheet" href="./css/venda/vendas-read-new.css">
+    <link rel="stylesheet" href="/css/layouts/tabela.css">
 @endsection
 @section('content')
     @if (count($plataformas) > 0)
@@ -13,12 +12,11 @@
                 <a class="btn btn-primary btn-sm" id="btn-criar" href="plataforma/create" role="button">
                     CRIAR NOVA
                 </a>
-                <table class="tabela-vendas">
+                <table class="tabela-padrao">
                     <tr id="table-header">
                         <th>NOME</th>
                         <th>TAXAS FIXAS</th>
                         <th>TAXAS PERCENTUAL</th>
-                        <th>VALOR FRETE</th>
                         <th>AÇÕES</th>
                     </tr>
 
@@ -27,7 +25,6 @@
                             <td class="default-column-value prod-title">{{ $plat->nome }}</td>
                             <td class="default-column-value">R$ {{ $plat->taxas_fixas }}</td>
                             <td class="default-column-value">{{ $plat->taxas_porcentagem }}%</td>
-                            <td class="default-column-value">R$ {{ $plat->valor_frete }}</td>
                             <td class="default-column-value actions">
                                 <a href="/plataforma/edit/{{ $plat->id }}" class="action-link">
                                     <ion-icon name="create-outline"></ion-icon>
@@ -48,7 +45,6 @@
             <p class="sem-plataforma">Não há plataforma criadas, <a href="plataforma/create">
                     CLIQUE AQUI
                 </a> para criar uma nova.</p>
-
     @endif
     </div>
 @endsection
