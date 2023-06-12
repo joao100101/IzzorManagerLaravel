@@ -21,10 +21,6 @@
                     placeholder="Nome da plataforma">
             </div>
             <div class="form-group">
-                <label for="valor_frete" class="form-label">VALOR FRETE</label>
-                <input type="text" class="form-control currency" name="valor_frete">
-            </div>
-            <div class="form-group">
                 <label for="taxas_fixas" class="form-label">TAXAS FIXAS</label>
                 <input type="text" class="form-control currency" name="taxas_fixas">
             </div>

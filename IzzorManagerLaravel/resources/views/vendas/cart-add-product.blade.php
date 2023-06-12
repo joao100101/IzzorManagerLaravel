@@ -1,60 +1,5 @@
 <head>
     <link rel="stylesheet" href="/css/layouts/modal.css">
-    <script>
-        var btnAdd = document.getElementById("adicionar");
-        var btnCancel = document.querySelector("#cancelar");
-        var produtos = [];
-
-        //Infos do form
-        var categoria = document.getElementById("categoria");
-        var catText = categoria.options[categoria.selectedIndex].text;
-
-        var produto = document.getElementById("produto");
-        var prodText = produto.options[produto.selectedIndex].text;
-
-        var tamanho = document.getElementById("tamanho");
-        var tamText = tamanho.options[tamanho.selectedIndex].text;
-
-        var cor = document.getElementById("cor");
-        var corText = cor.options[cor.selectedIndex].text;
-
-        var qtd = document.getElementById("quantidade");
-        var qtdText = qtd.options[qtd.selectedIndex].text;
-
-        function submit() {
-            alert('aaaaa')
-            console.log(catText);
-            console.log(prodText);
-            console.log(tamText);
-            console.log(corText);
-            console.log(qtdText);
-        }
-
-
-
-        // Função para limpar os valores dos campos do formulário
-        function cancel() {
-            var selectElements = document.querySelectorAll('select');
-            var inputElements = document.querySelectorAll('input[type="number"]');
-            $('#produto .opcao-valida').remove();
-            // Limpar campos de seleção
-            selectElements.forEach(function(select) {
-                select.value = '-1'; // Definir como o valor padrão
-            });
-
-            // Limpar campos de entrada de número
-            inputElements.forEach(function(input) {
-                input.value = ''; // Definir como em branco
-            });
-        }
-
-
-
-
-        btnCancel.addEventListener('click', cancel);
-        btnAdd.addEventListener('click', submit);
-    </script>
-
 </head>
 
 <div class="modal fade" id="modal-add-prod" tabindex="-1">
@@ -123,56 +68,115 @@
 
 <script src="/js/venda/cart-add.js"></script>
 
+
 <script>
-    var btnAdd = document.querySelector("#adicionar");
-    var btnCancel = document.querySelector("#cancelar");
-    var produtos = [];
+    var btnAdd = document.getElementById("adicionar")
 
-    //Infos do form
-    var categoria = document.getElementById("categoria");
-    var catText = categoria.options[categoria.selectedIndex].text;
 
-    var produto = document.getElementById("produto");
-    var prodText = produto.options[produto.selectedIndex].text;
 
-    var tamanho = document.getElementById("tamanho");
-    var tamText = tamanho.options[tamanho.selectedIndex].text;
 
-    var cor = document.getElementById("cor");
-    var corText = cor.options[cor.selectedIndex].text;
 
-    var qtd = document.getElementById("quantidade");
-    var qtdText = qtd.options[qtd.selectedIndex].text;
 
-    function submit() {
-        console.log(catText);
-        console.log(prodText);
-        console.log(tamText);
-        console.log(corText);
-        console.log(qtdText);
+    function adicionarObjeto() {
+        var categoria = document.getElementById("categoria");
+        var produto = document.getElementById("produto");
+        var tamanho = document.getElementById("tamanho");
+        var cor = document.getElementById("cor");
+        var quantidade = document.getElementById("quantidade");
+
+        // Acesse os valores dos campos
+        var valorCategoria = categoria.options[categoria.selectedIndex].text;
+        var valorProduto = produto.options[produto.selectedIndex].text;
+        var valorTamanho = tamanho.options[tamanho.selectedIndex].text;
+        var valorCor = cor.options[cor.selectedIndex].text;
+        var valorQuantidade = quantidade.value;
+        var produto = {
+            categoria: valorCategoria,
+            produto: valorProduto,
+            tamanho: valorTamanho,
+            cor: valorCor,
+            quantidade: valorQuantidade
+        }
+        console.log(produto)
+        // Recupera a lista de objetos do sessionStorage
+        if ((produto.categoria != "ESCOLHA UMA CATEGORIA") && (produto.produto != "ESCOLHA UM PRODUTO") && (produto
+                .tamanho != "ESCOLHA UM TAMANHO") && (produto.cor != "ESCOLHA UMA COR") && (produto.quantidade > 0)) {
+
+
+
+            var table = document.getElementById("carrinhocliente");
+
+            var row = document.createElement("tr");
+            table.appendChild(row);
+            var categoria = document.createElement("td");
+            var produtocell = document.createElement("td");
+            var tamanho = document.createElement("td");
+            var cor = document.createElement("td");
+            var quantidade = document.createElement("td");
+            var acoes = document.createElement("td");
+
+            categoria.innerHTML = produto.categoria
+            produtocell.innerHTML = produto.produto
+            tamanho.innerHTML = produto.tamanho
+            cor.innerHTML = produto.cor
+            quantidade.innerHTML = produto.quantidade
+            acoes.innerHTML = `
+            <a href="" class="action-link">
+                <ion-icon name="eye-outline"></ion-icon>
+            </a>
+            <a href="" class="action-link">
+                <ion-icon name="create-outline"></ion-icon>
+            </a>
+            <a class="action-link">
+                <ion-icon name="trash-outline"></ion-icon>
+            </a>`
+
+            row.appendChild(categoria);
+            row.appendChild(produtocell);
+            row.appendChild(tamanho);
+            row.appendChild(cor);
+            row.appendChild(quantidade);
+            row.appendChild(acoes);
+
+        } else {
+            console.log("Escolha as opçoes validas.")
+        }
+    }
+    btnAdd.addEventListener('click', adicionarObjeto);
+
+    function exibirListaObjetos() {
+        // Recupera a lista de objetos do sessionStorage
+        var listaObjetos = JSON.parse(sessionStorage.getItem('listaObjetos')) || [];
+
+        // Exibe a lista de objetos
+        listaObjetos.forEach(function(objeto) {
+            console.log(objeto);
+        });
     }
 
+    function atualizarObjeto(indice, novoObjeto) {
+        // Recupera a lista de objetos do sessionStorage
+        var listaObjetos = JSON.parse(sessionStorage.getItem('listaObjetos')) || [];
 
+        // Atualiza o objeto na posição do índice fornecido
+        if (indice >= 0 && indice < listaObjetos.length) {
+            listaObjetos[indice] = novoObjeto;
+        }
 
-    // Função para limpar os valores dos campos do formulário
-    function cancel() {
-        var selectElements = document.querySelectorAll('select');
-        var inputElements = document.querySelectorAll('input[type="number"]');
-        $('#produto .opcao-valida').remove();
-        // Limpar campos de seleção
-        selectElements.forEach(function(select) {
-            select.value = '-1'; // Definir como o valor padrão
-        });
-
-        // Limpar campos de entrada de número
-        inputElements.forEach(function(input) {
-            input.value = ''; // Definir como em branco
-        });
+        // Armazena a lista atualizada no sessionStorage
+        sessionStorage.setItem('listaObjetos', JSON.stringify(listaObjetos));
     }
 
+    function excluirObjeto(indice) {
+        // Recupera a lista de objetos do sessionStorage
+        var listaObjetos = JSON.parse(sessionStorage.getItem('listaObjetos')) || [];
 
+        // Remove o objeto na posição do índice fornecido
+        if (indice >= 0 && indice < listaObjetos.length) {
+            listaObjetos.splice(indice, 1);
+        }
 
-
-    btnCancel.addEventListener('click', cancel);
-    btnAdd.addEventListener('click', submit);
+        // Armazena a lista atualizada no sessionStorage
+        sessionStorage.setItem('listaObjetos', JSON.stringify(listaObjetos));
+    }
 </script>

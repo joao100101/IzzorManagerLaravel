@@ -94,16 +94,35 @@
                         </span>
                     </a>
                 </li>
-                <li style="float:right">
-                    <a href="#">
-                        <span class="nav-icones">
-                            <ion-icon name="person-circle-outline"></ion-icon>
-                        </span>
-                        <span class="nav-texto">
-                            LOGIN
-                        </span>
-                    </a>
-                </li>
+                @auth()
+                    <li style="float:right">
+                        <form action="/logout" method="POST">
+                            @csrf
+                            <a href="/logout"
+                                onclick="event.preventDefault();
+                    this.closest('form').submit();">
+                                <span class="nav-icones">
+                                    <ion-icon name="log-out-outline"></ion-icon>
+                                </span>
+                                <span class="nav-texto">
+                                    LOGOUT
+                                </span>
+                            </a>
+                        </form>
+                    </li>
+                @endauth
+                @guest
+                    <li style="float:right">
+                        <a href="/login">
+                            <span class="nav-icones">
+                                <ion-icon name="person-circle-outline"></ion-icon>
+                            </span>
+                            <span class="nav-texto">
+                                LOGIN
+                            </span>
+                        </a>
+                    </li>
+                @endguest
             </ul>
         </nav>
     </header>

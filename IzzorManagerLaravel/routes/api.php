@@ -21,3 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/categorias', [ApiController::class, 'categoriaFindAll']);
 Route::get('/categorias/{id}/produtos', [ApiController::class, 'produtoFindByCategory']);
 
+Route::get('/plataformas', [ApiController::class, 'plataformaFindAll']);
+

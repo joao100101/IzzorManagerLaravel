@@ -33,4 +33,17 @@ class VendaController extends Controller
         return view('vendas/venda-create');
     }
 
+    public function cartAdd(Request $request)
+    {
+        $dadosFormulario = $request->validate([
+            'campo1' => 'required',
+            'campo2' => 'required',
+            // Adicione outras regras de validação para os campos do formulário
+        ]);
+
+        // Armazene os dados na sessão
+        $lista = session('lista', []);
+        $lista[] = $dadosFormulario;
+        session(['lista' => $lista]);
+    }
 }

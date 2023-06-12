@@ -1,4 +1,7 @@
 
+
+
+
 $(document).ready(() => {
     $('#categoria').on('change', function () {
         var valorSelecionado = $(this).val();
@@ -29,7 +32,6 @@ $(document).ready(() => {
 $(() => {
     $('button[id = "adicionar').click((e) => {
         e.preventDefault();
-        var produtos = [];
 
         //Infos do form
         var categoria = document.getElementById("categoria");
@@ -47,11 +49,13 @@ $(() => {
         var qtd = document.getElementById("quantidade");
         var qtdText = qtd.value;
 
-        item = {'categoria': catText, 'produto': prodText, 'tamanho': tamText, 'cor': corText, 'quantidade': qtdText}
+        item = { 'categoria': catText, 'produto': prodText, 'tamanho': tamText, 'cor': corText, 'quantidade': qtdText }
         produtos.push(item);
         console.log(produtos);
     });
 });
+
+
 
 
 
@@ -73,5 +77,3 @@ $.ajax({
         console.error(error);
     }
 });
-
-

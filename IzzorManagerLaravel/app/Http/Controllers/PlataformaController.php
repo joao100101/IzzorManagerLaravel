@@ -31,7 +31,7 @@ class PlataformaController extends Controller
         if (strlen($request->nome) == 0) {
             return redirect('/plataforma/create')->with('msg-error', 'Verifique todos os dados inseridos!');
         }
-        if ($request->nome == null || $request->taxas_fixas == null || $request->valor_frete == null || $request->taxas_porcentagem == null) {
+        if ($request->nome == null || $request->taxas_fixas == null || $request->taxas_porcentagem == null) {
             return redirect('/plataforma/create')->with('msg-error', 'Verifique todos os dados inseridos!');
         }
 
@@ -41,16 +41,10 @@ class PlataformaController extends Controller
         $taxas_fixas = str_replace(",", ".", $taxas_fixas); // substitui "," por "."
         $taxas_fixas = floatval($taxas_fixas); // converte para double
 
-        $valor_frete = $request->valor_frete;
-        $valor_frete = str_replace("R$ ", "", $valor_frete); // remove "R$ "
-        $valor_frete = str_replace(".", "", $valor_frete);
-        $valor_frete = str_replace(",", ".", $valor_frete); // substitui "," por "."
-        $valor_frete = floatval($valor_frete); // converte para double
 
         $plataforma->nome = $request->nome;
         $plataforma->taxas_fixas = $taxas_fixas;
         $plataforma->taxas_porcentagem = doubleval($request->taxas_porcentagem);
-        $plataforma->valor_frete = $valor_frete;
         $plataforma->save();
         return redirect('/plataforma')->with('msg', 'Plataforma criada com sucesso!');
     }

@@ -61,12 +61,22 @@
                             PRODUTOS
                         </a>
                     </li>
+                    @auth
                     <li class="nav-item">
                         <a href="#" class="nav-link">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                            LOGOUT
+                        </a>
+                    </li>
+                    @endauth
+                    @guest
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link">
                             <ion-icon name="person-circle-outline"></ion-icon>
                             LOGIN
                         </a>
                     </li>
+                    @endguest
                 </ul>
         </div>
         </nav>

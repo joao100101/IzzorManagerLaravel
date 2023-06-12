@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="/css/layouts/tabela.css" />
     <script src="/js/jquery.maskMoney.min.js" type="text/javascript"></script>
     <script src="/js/currencyMaskConfig.js"></script>
-
 @endsection
 
 @section('content')
@@ -19,6 +18,12 @@
             <div class="form-group">
                 <label for="idvenda" class="form-label">ID DA VENDA</label>
                 <input type="text" class="form-control" id="idvenda" name="idvenda" placeholder="Ex: SHP1234">
+            </div>
+            <div class="form-group">
+                <label for="plataforma" class="form-label">PLATAFORMA</label>
+                <select class="form-select" name="plataforma" id="plataforma" aria-label="Selecionar plataforma">
+                    <option value="-1">ESCOLHA UMA PLATAFORMA</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="cliente" class="form-label">CLIENTE</label>
@@ -32,7 +37,7 @@
                     <div class="card">
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
-                                <button class="btn btn-link" id="card-button" data-toggle="collapse"
+                                <button type="button" class="btn btn-link" id="card-button" data-toggle="collapse"
                                     data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     Carrinho do Cliente
                                 </button>
@@ -46,26 +51,36 @@
                                     data-bs-target="#modal-add-prod" role="button">
                                     ADICIONAR PRODUTO
                                 </a>
-                                <table class="tabela-padrao">
-                                    <tr id="table-header">
-                                        <th>ID</th>
-                                        <th>CATEGORIA</th>
-                                        <th>PRODUTO</th>
-                                        <th>COR</th>
-                                        <th>TAMANHO</th>
-                                        <th>QUANTIDADE</th>
-                                        <th>AÇÕES</th>
-                                    </tr>
-                                    <tr>
-                                        <td>0</td>
-                                        <td>Test</td>
-                                        <td>Test</td>
-                                        <td>Azul</td>
-                                        <td>GG</td>
-                                        <td>2</td>
-                                        <td>sim</td>
-                                    </tr>
-                                </table>
+                                <div id="tabela-container">
+                                    <table class="tabela-padrao" id="carrinhocliente">
+                                        <tr id="table-header">
+                                            <th>CATEGORIA</th>
+                                            <th>PRODUTO</th>
+                                            <th>COR</th>
+                                            <th>TAMANHO</th>
+                                            <th>QUANTIDADE</th>
+                                            <th>AÇÕES</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Test</td>
+                                            <td>Test</td>
+                                            <td>Azul</td>
+                                            <td>GG</td>
+                                            <td>2</td>
+                                            <td class="default-column-value actions">
+                                                <a href="" class="action-link">
+                                                    <ion-icon name="eye-outline"></ion-icon>
+                                                </a>
+                                                <a href="" class="action-link">
+                                                    <ion-icon name="create-outline"></ion-icon>
+                                                </a>
+                                                <a class="action-link">
+                                                    <ion-icon name="trash-outline"></ion-icon>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -85,13 +100,12 @@
 
 
                 <input type="submit" class="btn btn-primary btn-create" value="Criar Produto">
-                <a href="/produtos">
+                <a href="/vendas">
                     <input type="button" class="btn btn-primary bnt-cancel" value="Cancelar">
                 </a>
         </form>
     </div>
 @endsection
 @section('script-area')
-
     <script src="/js/venda/venda-create.js"></script>
 @endsection
